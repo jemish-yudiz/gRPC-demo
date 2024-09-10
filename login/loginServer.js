@@ -9,7 +9,7 @@ const packageDefinition = protoLoader.loadSync('login.proto', {});
 const loginProto = grpc.loadPackageDefinition(packageDefinition);
 
 mongoose
-        .connect("mongodb+srv://yudiz:FEdwYBqZLlsUQWMY@cluster0.uxy722v.mongodb.net/ESeriesRummy")
+        .connect(process.env.MONGODB_URI)
         .then(() => console.log('Database connected'))
         .catch((error) => {
             throw error;
