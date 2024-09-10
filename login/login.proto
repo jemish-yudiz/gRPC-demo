@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package login;
+
+service LoginService {
+  rpc Login (LoginRequest) returns (LoginResponse) {}
+}
+
+message LoginRequest {
+  string sMobile = 1;
+  string sPassword = 2;
+}
+
+message MessageObject {
+  int32 code = 1;
+  string message = 2;
+}
+
+message LoginResponse {
+  bool success = 1;
+  MessageObject message = 2;
+  string token = 3;
+}
